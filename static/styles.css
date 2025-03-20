@@ -1,0 +1,162 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #d3d3d3; /* Color más oscuro al pasar el ratón */
+}
+.scrollable-table {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 500px;
+    display: block;
+}
+.low {
+    color: red;
+}
+.medium {
+    color: green;
+}
+.high {
+    color: blue;
+}
+.sticky-header th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #f2f2f2;
+}
+.sticky-column {
+    position: sticky;
+    left: 0;
+    background: #f2f2f2;
+    z-index: 2;
+}
+.efficiency-table, .daily-average-table {
+    margin-top: 20px;
+}
+.horizontal-table th, .horizontal-table td {
+    padding: 5px;
+}
+.day-even {
+    background-color: #f9f9f9; /* Light grey */
+}
+.day-odd {
+    background-color: #e6f7ff; /* Light blue */
+}
+.day-even .sticky-header, .day-odd .sticky-header {
+    background: #f2f2f2; /* Sticky header background */
+}
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    padding-top: 20px;
+}
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+}
+.sidebar a:hover {
+    background-color: #575757;
+}
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+.progress {
+    height: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;
+    transition: width 0.6s ease;
+}
+.progress-label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.overall-progress {
+    position: fixed; /* Fija la posición en la ventana */
+    top: 20px;
+    right: 20px;
+    width: 150px; /* Ajusta el ancho según sea necesario */
+    z-index: 1000; /* Asegura que esté encima del contenido */
+    background-color: #ffffff; /* Color de fondo para contraste */
+    padding: 10px; /* Espacio interno para las barras de progreso */
+    border: 1px solid #cccccc; /* Borde para mejor separación */
+    border-radius: 4px; /* Esquinas redondeadas */
+}
+.content {
+    margin-top: 80px; /* Ajusta el margen superior para evitar solapamientos */
+    padding-right: 200px; /* Añade espacio a la derecha para las barras de progreso */
+}
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #d3d3d3; /* Color más oscuro al pasar el ratón */
+}
+
+.low {
+    color: red;
+}
+
+.medium {
+    color: green;
+}
+
+.high {
+    color: blue;
+}
+
+.horizontal-table th, .horizontal-table td {
+    padding: 5px;
+}
