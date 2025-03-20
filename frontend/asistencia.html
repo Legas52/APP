@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("{{ url_for('static', filename='service-worker.js') }}")
+          .then(reg => console.log("Service Worker registrado", reg))
+          .catch(err => console.error("Error registrando Service Worker", err));
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Asistencia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .sidebar {
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #333;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background: #575757;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        .table-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .tables {
+            flex: 0 0 70%;
+        }
+        .additional-table {
+            flex: 0 0 25%;
+            margin-left: 20px;
+            border: 1px solid #ddd;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+            text-align: left;
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+        thead tr {
+            background-color: #009879;
+            color: #ffffff;
+        }
+        tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        tbody tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="{{ url_for('home') }}">Inicio</a>
+        <a href="{{ url_for('index') }}">Reporte de Efectividad</a>
+        <a href="{{ url_for('asistencia') }}">Asistencia</a>
+        <a href="{{ url_for('packing_list') }}">Envios</a>
+    </div>
+    <div class="content">
+        <h1>Reporte de Asistencia</h1>
+        <div class="table-container">
+            <div class="tables">
+                {% for table in tables %}
+                    {{ table|safe }}
+                {% endfor %}
+            </div>
+            {% if additional_table %}
+                <div class="additional-table">
+                    {{ additional_table|safe }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

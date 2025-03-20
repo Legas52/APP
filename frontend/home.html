@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="{{ url_for('home') }}">Inicio</a>
+        <a href="{{ url_for('index') }}">Reporte de Efectividad</a>
+        <a href="{{ url_for('asistencia') }}">Asistencia</a>
+        <a href="{{ url_for('packing_list') }}">Envios</a>
+    </div>
+    <div class="content">
+        <h1>Pantalla de Inicio</h1>
+        <p>Contenido de la pantalla de inicio.</p>
+    </div>
+</body>
+</html>
